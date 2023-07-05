@@ -91,9 +91,14 @@ fonction <code><a href="../reference/telecharger_donnees_onde_api.html">telechar
 départements. Dans l’exemple ci-dessous, les départements du
 <em>14</em>, <em>27</em> et <em>60</em> sont choisis.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://pascalirz.github.io/ondetools/">ondetools</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="co">## 1) Charger le package</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://pascalirz.github.io/ondetools/">ondetools</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">onde_df</span> <span class="op">&lt;-</span> <span class="fu">ondetools</span><span class="fu">::</span><span class="fu"><a href="../reference/telecharger_donnees_onde_api.html">telecharger_donnees_onde_api</a></span><span class="op">(</span>dpt <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'14'</span>, <span class="st">'27'</span>, <span class="st">'60'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="co">## 2) Choisir ses départements</span></span>
+<span><span class="va">mes_dpts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'14'</span>, <span class="st">'27'</span>, <span class="st">'60'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## 2) Télécharger les données onde</span></span>
+<span><span class="va">onde_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/telecharger_donnees_onde_api.html">telecharger_donnees_onde_api</a></span><span class="op">(</span>dpt <span class="op">=</span> <span class="va">mes_dpts</span><span class="op">)</span></span></code></pre></div>
 <p>Ensuite, il faut définir plusieurs paramètres qui seront utilisés
 pour la création du rapport :</p>
 <ul>
@@ -112,9 +117,10 @@ complémentaire onde (avec l’argument <code>complementaire</code>) ;</li>
 (avec l’argument <code>dossier_sortie</code>).</li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/produire_rapport_mensuel_dpt.html">produire_rapport_mensuel_dpt</a></span><span class="op">(</span></span>
+<code class="sourceCode R"><span><span class="co">## 3) Produire le(s) rapport(s) </span></span>
+<span><span class="fu"><a href="../reference/produire_rapport_mensuel_dpt.html">produire_rapport_mensuel_dpt</a></span><span class="op">(</span></span>
 <span>  onde_df <span class="op">=</span> <span class="va">onde_df</span>,</span>
-<span>  code_departement <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'27'</span>,<span class="st">'60'</span><span class="op">)</span>,</span>
+<span>  code_departement <span class="op">=</span> <span class="va">mes_dpts</span>,</span>
 <span>  annee_mois <span class="op">=</span> <span class="st">"2023-06"</span>,</span>
 <span>  region_dr <span class="op">=</span> <span class="st">'Normandie'</span>,</span>
 <span>  complementaire <span class="op">=</span> <span class="cn">F</span>,</span>
