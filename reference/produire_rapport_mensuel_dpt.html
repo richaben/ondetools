@@ -99,7 +99,26 @@ le dossier de travail <code><a href="https://rdrr.io/r/base/getwd.html" class="e
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co">## Un rapport pour le département 02 pour le mois de mai 2022 ('2022_05')</span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="fu">produire_rapport_mensuel_dpt</span><span class="op">(</span>onde_df <span class="op">=</span> <span class="va">donnees_onde</span>,</span></span>
+<span class="r-in"><span>                             code_departement <span class="op">=</span> <span class="st">'02'</span>,</span></span>
+<span class="r-in"><span>                             annee_mois <span class="op">=</span> <span class="st">"2022_05"</span>,</span></span>
+<span class="r-in"><span>                             region_dr <span class="op">=</span> <span class="st">'Hauts-de-France'</span>,</span></span>
+<span class="r-in"><span>                             complementaire <span class="op">=</span> <span class="cn">F</span>,</span></span>
+<span class="r-in"><span>                             dossier_sortie <span class="op">=</span> <span class="st">"./OUTPUT"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Rapports pour plusieurs départements (ex: 14, 27, 76) pour des complémentaires</span></span></span>
+<span class="r-in"><span><span class="co">##  du mois de juin 2023 ('2023_06')</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">produire_rapport_mensuel_dpt</span><span class="op">(</span>onde_df <span class="op">=</span> <span class="va">donnees_onde</span>,</span></span>
+<span class="r-in"><span>                             code_departement <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'14'</span>, <span class="st">'27'</span>, <span class="st">'76'</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>                             annee_mois <span class="op">=</span> <span class="st">"2022_06"</span>,</span></span>
+<span class="r-in"><span>                             region_dr <span class="op">=</span> <span class="st">'Normandie'</span>,</span></span>
+<span class="r-in"><span>                             complementaire <span class="op">=</span> <span class="cn">T</span>,</span></span>
+<span class="r-in"><span>                             dossier_sortie <span class="op">=</span> <span class="st">"./OUTPUT"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+</code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside></div>
