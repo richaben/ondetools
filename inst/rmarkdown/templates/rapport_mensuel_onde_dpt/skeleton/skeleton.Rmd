@@ -53,7 +53,7 @@ Pour plus d'informations : [Lien réseau ONDE (http://onde.eaufrance.fr)](https:
 
 ```{r, include=FALSE, echo=FALSE}
 ## 
-onde_df <- onde_df %>% 
+onde_df <- params$onde_df %>% 
   dplyr::mutate(code_campagne = as.numeric(code_campagne))
 
 ### prétraitement sur le département
