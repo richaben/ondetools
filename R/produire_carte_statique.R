@@ -161,7 +161,7 @@ produire_carte_statique <- function(onde_df_mois = NULL,
     ) +
     ggplot2::ggtitle(
       label = glue::glue(
-        'R\u00e9seau ONDE - {unique(onde_df_mois$libelle_departement)} - Campagne {unique(onde_df_mois$libelle_type_campagne)} {unique(lubridate::month(onde_df_mois$date_campagne,label = T, locale = \"fr_FR\"))} {unique(lubridate::year(onde_df_mois$date_campagne))}'
+        'R\u00e9seau ONDE - {unique(onde_df_mois$libelle_departement)} - Campagne {unique(onde_df_mois$libelle_type_campagne)} {as.character(unique(lubridate::month(onde_df_mois$date_campagne,label = T)))} {unique(lubridate::year(onde_df_mois$date_campagne))}'
       ),
       subtitle = glue::glue('{referentiel_onde}')
     ) +
@@ -183,7 +183,8 @@ produire_carte_statique <- function(onde_df_mois = NULL,
       panel.grid.major = ggplot2::element_line(colour = NA),
       panel.grid.minor = ggplot2::element_line(colour = NA),
       legend.position = "right",
-      plot.background = ggplot2::element_blank()
+      plot.background = ggplot2::element_blank(),
+      legend.key = element_blank()
     )
 }
 

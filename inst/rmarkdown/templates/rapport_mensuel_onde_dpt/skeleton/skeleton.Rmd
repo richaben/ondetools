@@ -94,6 +94,7 @@ onde_df_mois <-
   params$onde_df %>% 
   dplyr::filter(code_departement == params$code_departement) %>% 
   dplyr::mutate(Mois = format(as.Date(date_campagne), "%m")) %>% 
+  dplyr::mutate(date_campagne = as.Date(date_campagne)) %>%
   dplyr::filter(libelle_type_campagne == params$type_rapport) %>% 
   dplyr::filter(Mois == mois_sel & Annee == annee_sel) %>% 
   dplyr::filter(code_campagne == max(as.numeric(code_campagne)))

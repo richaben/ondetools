@@ -1,5 +1,6 @@
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/PascalIrz/ondetools/workflows/R-CMD-check/badge.svg)](https://github.com/PascalIrz/ondetools/actions)
+[![R-CMD-check](https://github.com/richaben/ondetools/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/richaben/ondetools/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 
